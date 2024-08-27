@@ -176,7 +176,7 @@ export const ProjectContextProvider = ({ children }) => {
       `http://localhost:8000/api/devuser-update/${id}`,
       requestOptions
     );
-    router.push("/homepage");
+    window.location.reload();
   };
   const pageNext = async () => {
     try {

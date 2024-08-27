@@ -98,14 +98,7 @@ function Project() {
           <p className="text-blue-400">
             Status: {mapStatus(project?.ProjectStatus)}
           </p>
-          {userprojects.indexOf(project.ProjectId) === -1 && (
-            <button
-              className="Join--project"
-              onClick={() => join(devUser.UserId, project?.ProjectId)}
-            >
-              Join project
-            </button>
-          )}
+
           <div>
             <TicketList
               userRoles={devUser?.UserRole}
@@ -195,6 +188,14 @@ function Project() {
             </div>
           )}
         </div>
+        {userprojects.indexOf(project.ProjectId) === -1 && (
+          <button
+            className="text-lg font-thin absolute left-[80%] bg-black px-5 py-2 rounded-md text-white "
+            onClick={() => join(devUser.UserId, project?.ProjectId)}
+          >
+            Join project
+          </button>
+        )}
       </LampContainer>
     </div>
   );
